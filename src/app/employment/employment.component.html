@@ -1,0 +1,27 @@
+<div class="container">
+  @for(employment of employments; track employment.id) {
+  <mat-card appearance="outlined">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title><strong>{{employment.title}}</strong></mat-card-title>
+      <mat-card-subtitle>{{employment.timePeriod}}</mat-card-subtitle>
+      <img mat-card-sm-image [src]="`assets/images/${employment.imageName}`" [alt]="`Image of ${employment.employer}`" matTooltip="{{employment.employer}}">
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{employment.text}}</p>
+  </mat-card-content>
+  <mat-card-footer>
+    <mat-divider></mat-divider>
+    <p>Skills:</p>
+    <mat-chip-set>
+        @for(skill of employment.skills; track skill) {
+          <mat-chip>{{skill}}</mat-chip>
+        }
+      </mat-chip-set>
+  </mat-card-footer>
+</mat-card>
+}
+</div>
+
+

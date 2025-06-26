@@ -1,0 +1,40 @@
+<mat-toolbar>
+  <div class="logo-container">
+    <img
+      alt="Rob Bentley"
+      src="assets/images/RobBentleyLogo.png"
+      class="logo"[routerLink]="['home']"
+    />
+  </div>
+  <button mat-raised-button [routerLink]="['home']">Home</button>
+  <button mat-raised-button [routerLink]="['employment']">Employment</button>
+  <button mat-raised-button [routerLink]="['qualifications']">
+    Qualifications
+  </button>
+  <button mat-raised-button [routerLink]="['projects']">Projects</button>
+  <span class="spacer"></span>
+  <a
+    href="mailto:robertbentley96@hotmail.co.uk?subject=Rob%20Bentley%20Enquiry"
+  >
+    <button
+      mat-fab
+      aria-label="email icon"
+      matTooltip="Drop me an email!"
+      [routerLink]="['home']"
+    >
+      <mat-icon>email</mat-icon>
+    </button>
+  </a>
+  <a
+    href="https://github.com/robbentley96"
+    target="_blank"
+    rel="noopener noreferrer"
+    ><button
+      mat-fab
+      aria-label="github icon"
+      matTooltip="See my GitHub!"
+    >
+      <mat-icon>code</mat-icon>
+    </button></a
+  >
+</mat-toolbar>

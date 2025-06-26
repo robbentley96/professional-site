@@ -1,0 +1,62 @@
+<mat-tab-group>
+  <mat-tab label="Professional">
+    <div class="container">
+      @for(project of professionalProjects; track project.id) {
+      <mat-card appearance="outlined">
+        <mat-card-header>
+          <mat-card-title><strong>{{ project.name }}</strong></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ project.text }}</p>
+        </mat-card-content>
+        <mat-card-footer>
+          <mat-divider></mat-divider>
+          <p>Technology:</p>
+          <mat-chip-set>
+            @for(tech of project.technology; track tech) {
+            <mat-chip>{{ tech }}</mat-chip>
+            }
+          </mat-chip-set>
+        </mat-card-footer>
+      </mat-card>
+      }
+    </div>
+  </mat-tab>
+  <mat-tab label="Personal">
+    <div class="container">
+      @for(project of personalProjects; track project.id) {
+      <mat-card appearance="outlined">
+        <mat-card-header>
+          <mat-card-title><strong>{{ project.name }}</strong></mat-card-title>
+          <a
+    [href]="project.githubLink"
+    target="_blank"
+    rel="noopener noreferrer" class="githubButton"
+    ><button
+      mat-fab
+      aria-label="github icon"
+      matTooltip="See it on GitHub!"
+    >
+      <mat-icon>code</mat-icon>
+    </button></a
+  >
+        </mat-card-header>
+        <br>
+        <img mat-card-img [src]="`assets/images/${project.imageName}`">
+        <mat-card-content>
+          <p>{{ project.text }}</p>
+        </mat-card-content>
+        <mat-card-footer>
+          <mat-divider></mat-divider>
+          <p>Technology:</p>
+          <mat-chip-set>
+            @for(tech of project.technology; track tech) {
+            <mat-chip>{{ tech }}</mat-chip>
+            }
+          </mat-chip-set>
+        </mat-card-footer>
+      </mat-card>
+      }
+    </div>
+  </mat-tab>
+</mat-tab-group>
